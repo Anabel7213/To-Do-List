@@ -1,0 +1,55 @@
+<%- include("header") -%>
+
+    <div class="container w-50">
+        <h1 class="text-center">
+            <%= day %>
+        </h1>
+        <div class="row">
+            <div class="col">
+
+                <div class="all-items-container">
+                    <% for (i=0; i < items.length; i++) { %>
+                        <div class="item-container">
+                            <label class="checkbox d-flex justify-content-between">
+                                <input type="checkbox" name="checkbox" id="checkbox<%= i %>" <% if (checkboxStates[i]) {
+                                    %> checked <% } %>>
+                                    <div class="text-holder">
+                                        <%= items[i] %>
+                                    </div>
+                                    <span class="check"></span>
+                            </label>
+                        </div>
+                        <% } %>
+                </div>
+
+                <form action="/" , method="POST" class="d-flex flex-column gap-3">
+                    <input class="inquiry text-center pb-2" type="text" placeholder="What do you want to tackle?"
+                        name="input" autocomplete="off">
+                    <button type="Submit" name="list" value="<%= day %>">Create</button>
+                    <div class="clear-all d-flex justify-content-center">
+                        <a href="/clear-all" class="clear">clear all</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[name="checkbox"]');
+
+            checkboxes.forEach((checkbox, index) => {
+                const checkboxState = localStorage.getItem(`checkbox${index}`);
+                if (checkboxState === 'checked') {
+                    checkbox.checked = true;
+                }
+            });
+        });
+
+        document.addEventListener('change', (event) => {
+            if (event.target.type === 'checkbox' && event.target.name === 'checkbox') {
+                const index = parseInt(event.target.id.replace('checkbox', ''));
+                localStorage.setItem(`checkbox${index}`, event.target.checked ? 'checked' : '');
+            }
+        });
+    </script>
