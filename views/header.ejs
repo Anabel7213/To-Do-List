@@ -38,17 +38,6 @@
             });
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeToggler = document.querySelector(".theme-toggler");
-            themeToggler.addEventListener("click", function () {
-                fetch("/theme").then(function () {
-                    location.reload();
-                }).catch(function (err) {
-                    console.error("Theme toggling error");
-                });
-            });
-        });
-
     </script>
 
 </body>

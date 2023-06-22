@@ -38,22 +38,6 @@ app.post("/", function (req, res) {
   checkboxStates = new Array(items.length).fill('');
 });
 
-app.get("/work", function (req, res) {
-  res.render("list", {
-    day: "Work List",
-    items: workItems,
-    theme: req.cookies.theme,
-    currentPage: "home",
-    checkboxStates: checkboxStates,
-  });
-});
-
-app.post("/work", function (req, res) {
-  let item = req.body.input;
-  workItems.push(item);
-  res.redirect("/work");
-});
-
 app.get("/about", function (req, res) {
   res.render("about", {
     theme: req.cookies.theme,
