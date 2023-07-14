@@ -154,6 +154,14 @@ header {
   font-weight: 200;
   color: var(--darker);
 }
+@media (max-width: 576px) {
+  .container ::-moz-placeholder {
+    font-size: 1.15rem;
+  }
+  .container ::placeholder {
+    font-size: 1.15rem;
+  }
+}
 .container button {
   font-weight: 800;
   font-size: 1.3rem;

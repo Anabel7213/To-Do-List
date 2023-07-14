@@ -14,7 +14,7 @@
                                 <input type="checkbox" name="checkbox" id="checkbox<%= i %>" <% if (checkboxStates[i]) {
                                     %> checked <% } %>>
                                     <div class="text-holder">
-                                        <%= items[i] %>
+                                        <%= items[i].name %>
                                     </div>
                                     <span class="check"></span>
                             </label>
@@ -27,7 +27,7 @@
                         name="input" autocomplete="off">
                     <button type="Submit" name="list" value="<%= day %>">Create</button>
                     <div class="clear-all d-flex justify-content-center">
-                        <a href="/clear-all" class="clear">clear all</a>
+                        <a href="/clear" class="clear">clear all</a>
                     </div>
                 </form>
             </div>

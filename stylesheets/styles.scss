@@ -182,6 +182,9 @@ header {
         font-size: 1.3rem;
         font-weight: 200;
         color: var(--darker);
+        @media (max-width:576px) {
+            font-size: 1.15rem;
+        }
     }
 
     button {
