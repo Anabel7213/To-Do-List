@@ -1,5 +1,7 @@
-# To Do List
+# To Do List (w/ DB)
 
-This project is built with Node.js and EJS to enable dynamicly changing values. It features express.js and a local server to remember the user added to-dos and theme preferences. A theme is pulled up from an object of themes randomly as the user clicks the button. 
+Built with Node.js and EJS to enable dynamically changing values. Allows to create different todo lists by utilizing express.js dynamic routing and params (no GUI for that atm but can be accessed by typing in /[your_list_name] in the URL.
+Features 6 colorful themes pulled from the object of themes randomly on button click, and remembers user preference.
+Runs on MongoDB cloud based server to persist created todo lists and items. Controllers are implemented with Mongoose. 
 
-The web app is hosted on Render with every change pushed to Github with Git version control.
+This project is hosted on Render at https://to-do-list-we2l.onrender.com
